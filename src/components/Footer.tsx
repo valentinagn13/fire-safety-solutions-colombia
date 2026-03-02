@@ -1,4 +1,4 @@
-import { Flame } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -6,10 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <Flame className="h-6 w-6 text-fire" />
-            <span className="font-display font-bold text-primary-foreground">
-              Fire Systems Colombia
-            </span>
+            <img src={logo} alt="Fire Systems de Colombia" className="h-10 w-auto" />
           </div>
           <nav className="flex gap-6 text-sm">
             {["Inicio", "Servicios", "Nosotros", "Contacto"].map((link) => (

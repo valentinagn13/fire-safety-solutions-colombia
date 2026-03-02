@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Flame } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { href: "#inicio", label: "Inicio" },
@@ -30,17 +31,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-2 group">
-          <div className="relative">
-            <Flame className="h-8 w-8 text-fire" />
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="font-display font-bold text-lg text-primary-foreground tracking-wide">
-              Fire Systems
-            </span>
-            <span className="text-xs text-fire font-semibold tracking-widest uppercase">
-              Colombia
-            </span>
-          </div>
+          <img src={logo} alt="Fire Systems de Colombia" className="h-12 w-auto" />
         </a>
 
         {/* Desktop nav */}
