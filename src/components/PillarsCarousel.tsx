@@ -3,24 +3,33 @@ import { Package, Wrench, Settings } from "lucide-react";
 const pillars = [
   {
     icon: Package,
-    title: "Suministros",
+    title: "NFPA",
     description:
-      "Extintores, mangueras, gabinetes, rociadores y todos los elementos necesarios para su sistema contra incendios con certificación de calidad.",
-    cta: "Ver Suministros",
+      "Asociación Nacional de Protección contra Incendios (EE. UU.). Desarrolla códigos y estándares de seguridad contra incendios ampliamente usados a nivel mundial.",
   },
   {
     icon: Wrench,
-    title: "Instalaciones",
+    title: "UL",
     description:
-      "Diseño e instalación de redes contra incendios, sistemas de detección y alarmas bajo normas NFPA y NSR-10 con ingenieros especializados.",
-    cta: "Ver Instalaciones",
+      "Underwriters Laboratories. Empresa global de certificación que prueba y valida seguridad de productos eléctricos, electrónicos e industriales.",
   },
   {
     icon: Settings,
-    title: "Mantenimiento",
+    title: "FM Approved",
     description:
-      "Planes de mantenimiento preventivo (IPM) y correctivo para garantizar el correcto funcionamiento de sus sistemas contra incendios.",
-    cta: "Ver Mantenimiento",
+      "Certificación de FM Global que avala productos y sistemas industriales (especialmente contra incendios) tras rigurosas pruebas técnicas.",
+  },
+  {
+    icon: Package,
+    title: "IBGS",
+    description:
+      "Organización vinculada a estándares de seguridad industrial y protección contra riesgos.",
+  },
+  {
+    icon: Wrench,
+    title: "NSR-10",
+    description:
+      "Reglamento Colombiano de Construcción Sismo Resistente. Norma obligatoria en Colombia para diseño y construcción estructural segura frente a sismos.",
   },
 ];
 
@@ -32,10 +41,10 @@ const PillarsCarousel = () => {
     <section className="py-16 bg-muted overflow-hidden">
       <div className="container mx-auto px-4 mb-10">
         <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center">
-          Nuestros <span className="text-fire">Pilares</span>
+          Seguridad, Calidad y <span className="text-fire">Normativas</span>
         </h2>
         <p className="text-muted-foreground text-center mt-3 max-w-lg mx-auto">
-          Tres áreas de especialización que garantizan la protección integral de su empresa.
+          Referentes técnicos y regulatorios que respaldan nuestros procesos y soluciones.
         </p>
       </div>
 
@@ -57,12 +66,6 @@ const PillarsCarousel = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                   {pillar.description}
                 </p>
-                <a
-                  href="#servicios"
-                  className="text-fire font-semibold text-sm hover:underline inline-flex items-center gap-1 group-hover:gap-2 transition-all"
-                >
-                  {pillar.cta} →
-                </a>
               </div>
             );
           })}

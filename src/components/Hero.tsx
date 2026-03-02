@@ -49,7 +49,7 @@ const Hero = () => {
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#servicios"
+                href="/servicios"
                 className="border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg hover:border-fire hover:text-fire transition-colors flex items-center justify-center"
               >
                 Ver Servicios

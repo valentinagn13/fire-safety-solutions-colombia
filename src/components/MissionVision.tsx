@@ -1,12 +1,23 @@
 import { motion } from "framer-motion";
 import { Target, Eye } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const MissionVision = () => {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src={heroBg}
+          alt="Fondo protección contra incendios"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/90 via-navy/85 to-navy-dark/80" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-14">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground">
             Nuestra <span className="text-fire">Esencia</span>
           </h2>
         </div>

@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#inicio", label: "Inicio" },
+  { href: "/servicios", label: "Servicios" },
+  { href: "/#nosotros", label: "Nosotros" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 const Navbar = () => {
@@ -30,8 +30,14 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
-        <a href="#inicio" className="flex items-center gap-2 group">
-          <img src={logo} alt="Fire Systems de Colombia" className="h-12 w-auto" />
+        <a href="/#inicio" className="flex items-center gap-2 group">
+          <div className="bg-white/95 rounded-xl shadow-lg overflow-hidden">
+            <img
+              src={logo}
+              alt="Fire Systems de Colombia"
+              className="block h-16 md:h-20 w-auto"
+            />
+          </div>
         </a>
 
         {/* Desktop nav */}
@@ -46,7 +52,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="/#contacto"
             className="bg-gradient-fire text-fire-foreground px-5 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg"
           >
             Visita Técnica Gratis
@@ -84,7 +90,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#contacto"
+                href="/#contacto"
                 onClick={() => setMobileOpen(false)}
                 className="bg-gradient-fire text-fire-foreground px-5 py-3 rounded-lg font-semibold text-sm text-center mt-2"
               >

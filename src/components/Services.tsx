@@ -7,7 +7,14 @@ import {
   FlameKindling,
 } from "lucide-react";
 
-const services = [
+export const services = [
+  {
+    icon: Gauge,
+    title: "Diagnóstico y Auditorías",
+    description:
+      "Evaluación técnica integral de sistemas de protección contra incendios para identificar riesgos, no conformidades y oportunidades de mejora.",
+    benefits: ["Inspección en sitio", "Informe técnico", "Plan de acción correctivo"],
+  },
   {
     icon: Droplets,
     title: "Instalación de Redes Contra Incendios",
@@ -30,6 +37,20 @@ const services = [
     benefits: ["Tecnología de punta", "Monitoreo remoto", "Respuesta inmediata"],
   },
   {
+    icon: BellRing,
+    title: "Seguridad Electrónica",
+    description:
+      "Implementación de soluciones de seguridad electrónica como videovigilancia, control de acceso y sistemas integrados de monitoreo.",
+    benefits: ["Integración centralizada", "Monitoreo en tiempo real", "Mayor control operativo"],
+  },
+  {
+    icon: Droplets,
+    title: "Diseño de Redes (RCI)",
+    description:
+      "Diseño especializado de redes contra incendio (RCI) con criterios hidráulicos y normativos para garantizar cobertura y desempeño adecuados.",
+    benefits: ["Memorias de cálculo", "Planos técnicos", "Cumplimiento NFPA y NSR-10"],
+  },
+  {
     icon: CalendarCheck,
     title: "Planes de Mantenimiento (IPM)",
     description:
@@ -42,6 +63,13 @@ const services = [
     description:
       "Venta, recarga y mantenimiento de extintores tipo CO₂ y otros agentes limpios para protección de activos.",
     benefits: ["Stock inmediato", "Recarga certificada", "Servicio a domicilio"],
+  },
+  {
+    icon: FlameKindling,
+    title: "Sistemas de Agente Limpio",
+    description:
+      "Diseño, suministro e instalación de sistemas de supresión por agente limpio para áreas críticas con alta sensibilidad tecnológica.",
+    benefits: ["Protección sin residuos", "Seguridad para equipos críticos", "Activación rápida y efectiva"],
   },
 ];
 
@@ -64,7 +92,7 @@ const Services = () => {
             Nuestros <span className="text-fire">Servicios</span>
           </h2>
           <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
-            Soluciones completas en protección contra incendios para empresas en toda Colombia.
+            Conozca nuestras líneas de servicio principales.
           </p>
         </div>
 
@@ -86,30 +114,22 @@ const Services = () => {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-gradient-fire transition-colors">
                   <Icon className="h-6 w-6 text-primary group-hover:text-fire-foreground transition-colors" />
                 </div>
-                <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                <h3 className="font-display text-lg font-bold text-foreground">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {service.description}
-                </p>
-                <ul className="space-y-1.5 mb-5">
-                  {service.benefits.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-sm text-foreground/80">
-                      <span className="w-1.5 h-1.5 rounded-full bg-fire flex-shrink-0" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="#contacto"
-                  className="text-fire font-semibold text-sm hover:underline"
-                >
-                  Solicitar información →
-                </a>
               </motion.div>
             );
           })}
         </motion.div>
+
+        <div className="text-center mt-10">
+          <a
+            href="/servicios"
+            className="inline-flex items-center justify-center bg-gradient-fire text-fire-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-lg"
+          >
+            Ver más detalles de servicios
+          </a>
+        </div>
       </div>
     </section>
   );

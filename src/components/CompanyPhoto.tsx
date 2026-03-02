@@ -1,6 +1,38 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 
+const instagramPosts = [
+  "https://www.instagram.com/p/DUnq_tPgKde/",
+  "https://www.instagram.com/reel/DRVkkiqjaRs/",
+  "https://www.instagram.com/reel/DP9XhvBDewe/",
+  "https://www.instagram.com/p/DUnq_tPgKde/",
+];
+
 const CompanyPhoto = () => {
+  useEffect(() => {
+    const instagramWindow = window as Window & {
+      instgrm?: { Embeds?: { process: () => void } };
+    };
+
+    const processEmbeds = () => {
+      if (instagramWindow.instgrm?.Embeds?.process) {
+        instagramWindow.instgrm.Embeds.process();
+      }
+    };
+
+    const existingScript = document.querySelector('script[src="https://www.instagram.com/embed.js"]');
+    if (existingScript) {
+      processEmbeds();
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://www.instagram.com/embed.js";
+    script.async = true;
+    script.onload = processEmbeds;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <section className="py-20 bg-muted">
       <div className="container mx-auto px-4">
@@ -9,7 +41,7 @@ const CompanyPhoto = () => {
             Conozca <span className="text-fire">Nuestra Empresa</span>
           </h2>
           <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
-            Instalaciones, equipo y compromiso al servicio de su seguridad.
+            Publicaciones recientes sobre nuestros proyectos y servicios.
           </p>
         </div>
 
@@ -18,18 +50,27 @@ const CompanyPhoto = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border"
+          className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4"
         >
-          <img
-            src="/placeholder.svg"
-            alt="Instalaciones de Fire Systems de Colombia"
-            className="w-full h-[300px] md:h-[450px] object-cover"
-            loading="lazy"
-          />
+          {instagramPosts.map((postUrl, index) => (
+            <blockquote
+              key={`${postUrl}-${index}`}
+              className="instagram-media rounded-xl border border-border bg-card shadow-xl"
+              data-instgrm-permalink={`${postUrl}?utm_source=ig_embed&utm_campaign=loading`}
+              data-instgrm-version="14"
+              style={{
+                margin: "1px auto",
+                maxWidth: "100%",
+                minWidth: "0",
+                width: "100%",
+              }}
+            >
+              <a href={postUrl} target="_blank" rel="noopener noreferrer">
+                Ver esta publicación en Instagram
+              </a>
+            </blockquote>
+          ))}
         </motion.div>
-        <p className="text-center text-muted-foreground/60 text-xs mt-4">
-          * Puede enviar una foto de su empresa para reemplazar esta imagen.
-        </p>
       </div>
     </section>
   );

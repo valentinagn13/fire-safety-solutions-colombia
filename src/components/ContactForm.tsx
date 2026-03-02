@@ -22,12 +22,23 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    // Simulate submission
-    setTimeout(() => {
-      setSending(false);
-      toast.success("¡Solicitud enviada! Nos comunicaremos pronto.");
-      setForm({ nombre: "", empresa: "", telefono: "", email: "", mensaje: "" });
-    }, 1200);
+
+    const message = [
+      "Hola, quiero solicitar una visita técnica sin costo.",
+      "",
+      `Nombre: ${form.nombre}`,
+      `Empresa: ${form.empresa}`,
+      `Teléfono: ${form.telefono}`,
+      `Email: ${form.email}`,
+      `Mensaje: ${form.mensaje || "No especificado"}`,
+    ].join("\n");
+
+    const submitWhatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(submitWhatsappLink, "_blank", "noopener,noreferrer");
+
+    setSending(false);
+    toast.success("Redirigiendo a WhatsApp con su solicitud...");
+    setForm({ nombre: "", empresa: "", telefono: "", email: "", mensaje: "" });
   };
 
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
