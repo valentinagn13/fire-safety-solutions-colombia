@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Send, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 
-const WHATSAPP_NUMBER = "573001234567"; // Placeholder
+const WHATSAPP_NUMBER = "573156439939";
 
 const ContactForm = () => {
   const [form, setForm] = useState({
@@ -164,22 +164,24 @@ const ContactForm = () => {
               <div className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-fire mt-0.5" />
                 <div>
-                  <p className="font-semibold text-foreground text-sm">Teléfono</p>
-                  <p className="text-muted-foreground text-sm">(601) 123 4567</p>
+                  <p className="font-semibold text-foreground text-sm">Celulares</p>
+                  <p className="text-muted-foreground text-sm">315 643 9939</p>
+                  <p className="text-muted-foreground text-sm">313 433 5250</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-fire mt-0.5" />
                 <div>
-                  <p className="font-semibold text-foreground text-sm">Email</p>
-                  <p className="text-muted-foreground text-sm">info@firesystemscolombia.com</p>
+                  <p className="font-semibold text-foreground text-sm">Correos</p>
+                  <p className="text-muted-foreground text-sm">comercial@firesystemscol.co</p>
+                  <p className="text-muted-foreground text-sm">proyectos@firesystemscol.co</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-fire mt-0.5" />
                 <div>
-                  <p className="font-semibold text-foreground text-sm">Ubicación</p>
-                  <p className="text-muted-foreground text-sm">Bogotá, Colombia</p>
+                  <p className="font-semibold text-foreground text-sm">Dirección</p>
+                  <p className="text-muted-foreground text-sm">Carrera 74 # 76 - 71, Bogotá D.C.</p>
                 </div>
               </div>
             </div>
